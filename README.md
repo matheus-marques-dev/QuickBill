@@ -8,17 +8,6 @@
 
 ---
 
-## 📸 Preview
-
-*(Adicione aqui um print da tela desktop e um da tela mobile)*
-<div style="display: flex; gap: 10px;">
-  <img src="<img width="1920" height="961" alt="Desktop" src="https://github.com/user-attachments/assets/eedf0691-021c-49a1-a5a7-57651b53c22e" />
-" alt="Desktop View" width="60%">
-  <img src="./assets/mobile-preview.png" alt="Mobile View" width="30%">
-</div>
-
----
-
 ## 💡 O Problema e a Solução
 
 **O Problema:** Muitos profissionais perdem tempo formatando documentos no Word ou enviando mensagens informais de preço, o que prejudica a imagem profissional.
