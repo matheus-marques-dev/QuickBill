@@ -8,7 +8,7 @@
 
 ---
 
-## 💡 O Problema e a Solução
+## O Problema e a Solução
 
 **O Problema:** Muitos profissionais perdem tempo formatando documentos no Word ou enviando mensagens informais de preço, o que prejudica a imagem profissional.
 
@@ -16,19 +16,19 @@
 
 ---
 
-## ✨ Funcionalidades Principais
+## Funcionalidades Principais
 
-* **🖨️ Exportação PDF Profissional:** O layout web se transforma automaticamente em uma folha A4 limpa ao clicar em imprimir, removendo menus e botões.
-* **💾 Persistência Automática (LocalStorage):** Os dados não são perdidos se a aba for fechada. O estado da aplicação é salvo no navegador do usuário.
-* **📱 Responsividade Avançada:**
+* **Exportação PDF Profissional:** O layout web se transforma automaticamente em uma folha A4 limpa ao clicar em imprimir, removendo menus e botões.
+* **Persistência Automática (LocalStorage):** Os dados não são perdidos se a aba for fechada. O estado da aplicação é salvo no navegador do usuário.
+* **Responsividade Avançada:**
     * **Desktop:** Layout Dashboard (Lado a Lado).
     * **Mobile:** Layout Scroll Vertical com tabelas adaptativas (`table-layout: fixed`).
-* **⚡ Cálculos em Tempo Real:** Adição e remoção de itens com atualização instantânea do valor total.
-* **🔒 Privacidade:** Nenhum dado é enviado para a nuvem. Tudo fica no dispositivo do usuário.
+* **Cálculos em Tempo Real:** Adição e remoção de itens com atualização instantânea do valor total.
+* **Privacidade:** Nenhum dado é enviado para a nuvem. Tudo fica no dispositivo do usuário.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+##  Tecnologias Utilizadas
 
 O projeto foi construído seguindo a filosofia **Vanilla JS**, sem dependências externas ou frameworks pesados, para garantir performance máxima e domínio dos fundamentos.
 
@@ -43,12 +43,6 @@ O projeto foi construído seguindo a filosofia **Vanilla JS**, sem dependências
     * Integração com `localStorage`.
 
 ---
-
-## 🧠 Destaques Técnicos (Desafios Resolvidos)
-
-### 1. Impressão Limpa no Linux/Windows
-Um dos maiores desafios foi remover os cabeçalhos padrão do navegador (Data, URL, Título) que poluem o PDF.
-**Solução:** Implementação de uma regra CSS crítica injetada no HTML para forçar as margens da folha a zero, obrigando o browser a ocultar os metadados.
 
 ```css
 @media print {
