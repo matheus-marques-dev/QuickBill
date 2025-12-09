@@ -2,7 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-Concluído-brightgreen)
 ![Tech](https://img.shields.io/badge/Tech-HTML%20%7C%20CSS%20%7C%20JS-blue)
-![License](https://img.shields.io/badge/License-MIT-gray)
+
 
 > Um gerador de orçamentos (invoices) rápido, responsivo e que roda 100% no navegador, focado em produtividade para freelancers e pequenos prestadores de serviço.
 
