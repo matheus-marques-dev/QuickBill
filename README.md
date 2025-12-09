@@ -44,7 +44,3 @@ O projeto foi construído seguindo a filosofia **Vanilla JS**, sem dependências
 
 ---
 
-```css
-@media print {
-    @page { margin: 0 !important; size: auto !important; }
-}
