@@ -55,9 +55,29 @@ button {
     font-weight: 600; transition: 0.2s; width: 100%; font-size: 0.95em;
 }
 .btn-add { background: #3b82f6; color: white; }
+
+.btn-add:hover {
+    background: #1e40af; /* Cor ao passar o mouse */
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 6px rgba(59, 130, 246, 0.4); 
+}
 .actions-footer { margin-top: auto; display: flex; flex-direction: column; gap: 12px; padding-top: 20px; }
+
 .btn-print { background: #10b981; color: white; font-size: 1em; }
+
+.btn-print:hover {
+    background: #047857; /* Cor ao passar o mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.4); 
+}
+
 .btn-clear { background: #ef4444; color: white; }
+
+.btn-clear:hover {
+    background: #b91c1c; /* Cor ao passar o mouse */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(239, 68, 68, 0.4); 
+}
 
 /* PREVIEW */
 .preview {
