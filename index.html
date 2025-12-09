@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Bill</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        @media print {
+          @page {
+            margin: 0 !important;
+            }
+            body {
+                margin: 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        <aside class="editor no-print">
+            <div class="editor-header">
+                <h2>Quick Bill</h2>
+                <p>Preencha os dados abaixo para baixar o seu orçamento</p>
+            </div>
+            
+            <div class="form-group">
+                <label>Sua Empresa / Nome</label>
+                <input type="text" id="input-company" placeholder="Nome da empresa">
+            </div>
+
+            <div class="form-group">
+                <label>Nome do Cliente</label>
+                <input type="text" id="input-client" placeholder="Nome do cliente">
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>Adicionar Serviço</h3>
+            <div class="add-item-box">
+                <input type="text" id="item-desc" placeholder="Nome do serviço realizado">
+                <div class="row">
+                    <input type="number" id="item-qtd" placeholder="Qtd" value="1" min="1">
+                    <input type="number" id="item-price" placeholder="Valor (R$)">
+                </div>
+                <button onclick="addItem()" class="btn-add">+ Adicionar Item</button>
+            </div>
+
+            <div class="actions-footer">
+                <button class="btn-print" onclick="window.print()">Imprimir / Salvar PDF</button>
+                <button class="btn-clear" onclick="clearAll()">Limpar Tudo</button>
+            </div>
+        </aside>
+
+        <main class="preview">
+            <div class="paper" id="invoice-paper">
+                <header>
+                    <div class="brand">
+                        <h1 id="preview-company">Nome da Sua Empresa</h1>
+                    </div>
+                    <div class="meta-data">
+                        <p class="invoice-title">ORÇAMENTO</p>
+                        <p>Data: <span id="current-date">--/--/----</span></p>
+                    </div>
+                </header>
+
+                <section class="client-info">
+                    <p class="label">Faturado para:</p>
+                    <h3 id="preview-client">Nome do Cliente</h3>
+                </section>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Descrição</th>
+                            <th>Qtd</th>
+                            <th>Valor Unit.</th>
+                            <th>Total</th>
+                            <th class="no-print">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody id="invoice-items">
+                        </tbody>
+                </table>
+
+                <footer class="invoice-footer">
+                    <div class="total-box">
+                        <span>Total Geral</span>
+                        <h2 id="grand-total">R$ 0,00</h2>
+                    </div>
+                </footer>
+                
+                <div class="footer-note">
+                    <p>Obrigado pela preferência!</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

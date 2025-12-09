@@ -1,0 +1,159 @@
+/* RESET E BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #e2e8f0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden; 
+    color: #1e293b;
+}
+
+.app-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* EDITOR */
+.editor {
+    width: 400px;
+    min-width: 350px;
+    background: #1e293b; 
+    color: #f8fafc;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: auto;
+    box-shadow: 4px 0 15px rgba(0,0,0,0.1);
+    z-index: 10;
+}
+
+.editor-header h2 { margin-bottom: 5px; }
+.editor-header p { color: #94a3b8; font-size: 0.9em; margin-bottom: 20px; }
+
+.form-group label { display: block; margin-bottom: 6px; font-size: 0.85em; color: #cbd5e1; font-weight: 600; }
+.editor input {
+    width: 100%; padding: 12px; border-radius: 6px; border: 1px solid #334155;
+    background: #0f172a; color: white; outline: none; transition: 0.2s;
+}
+.editor input:focus { border-color: #3b82f6; }
+
+.divider { height: 1px; background: #334155; margin: 10px 0; }
+.add-item-box { background: #334155; padding: 15px; border-radius: 8px; border: 1px solid #475569; }
+.add-item-box input { margin-bottom: 10px; background: #1e293b; }
+.row { display: flex; gap: 10px; }
+
+button {
+    cursor: pointer; padding: 12px; border: none; border-radius: 6px;
+    font-weight: 600; transition: 0.2s; width: 100%; font-size: 0.95em;
+}
+.btn-add { background: #3b82f6; color: white; }
+.actions-footer { margin-top: auto; display: flex; flex-direction: column; gap: 12px; padding-top: 20px; }
+.btn-print { background: #10b981; color: white; font-size: 1em; }
+.btn-clear { background: #ef4444; color: white; }
+
+/* PREVIEW */
+.preview {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    background: #64748b;
+    overflow-y: auto;
+}
+
+.paper {
+    background: white;
+    width: 210mm; /* A4 */
+    min-height: 297mm;
+    padding: 20mm;
+    box-shadow: 0 0 30px rgba(0,0,0,0.25);
+    color: #333;
+    margin: auto;
+}
+
+/* Estilos Internos do Papel */
+header { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2px solid #1e293b; padding-bottom: 20px; margin-bottom: 40px; }
+.brand h1 { font-size: 1.8em; color: #1e293b; word-wrap: break-word; }
+.meta-data { text-align: right; }
+.invoice-title { font-size: 0.8em; color: #64748b; text-transform: uppercase; letter-spacing: 2px; font-weight: bold; }
+.client-info { margin-bottom: 40px; }
+.client-info h3 { font-size: 1.4em; font-weight: 500; }
+
+/* Tabela Padrão */
+table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+th { text-align: left; border-bottom: 2px solid #e2e8f0; padding: 12px 0; color: #64748b; font-size: 0.85em; text-transform: uppercase; font-weight: 600; }
+td { padding: 16px 0; border-bottom: 1px solid #f1f5f9; font-size: 0.95em; }
+.btn-delete { background: transparent; color: #ef4444; width: auto; padding: 4px; font-size: 1.2em; text-align: right; }
+.invoice-footer { display: flex; justify-content: flex-end; margin-top: 30px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
+.total-box { text-align: right; }
+.total-box h2 { font-size: 2.2em; color: #3b82f6; }
+.footer-note { margin-top: 60px; text-align: center; color: #94a3b8; font-size: 0.9em; }
+
+/* RESPONSIVIDADE */
+@media (max-width: 900px) {
+    body { height: auto; overflow-y: auto; }
+    .app-container { flex-direction: column; }
+    .editor { width: 100%; min-width: 0; padding: 20px; }
+    
+    .preview {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        background: #cbd5e1;
+        height: auto;
+    }
+
+    .paper {
+        width: 100% !important;
+        min-width: 0 !important;
+        padding: 15px;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    /* TABELA FIXA */
+    table { table-layout: fixed; width: 100%; }
+    
+    th, td {
+        font-size: 0.7em;
+        padding: 8px 2px;
+        word-wrap: break-word;
+    }
+
+    /* LARGURAS DAS COLUNAS */
+    th:nth-child(1), td:nth-child(1) { width: 32%; } 
+    th:nth-child(2), td:nth-child(2) { width: 10%; text-align: center; } /* Qtd */
+    th:nth-child(3), td:nth-child(3) { width: 22%; text-align: right; } /* Unit */
+    th:nth-child(4), td:nth-child(4) { width: 22%; text-align: right; } /* Total */
+    th:nth-child(5), td:nth-child(5) { width: 14%; text-align: right; } /* Ação */
+
+    .brand h1 { font-size: 1.4em; }
+    .total-box h2 { font-size: 1.6em; }
+}
+
+/* IMPRESSÃO */
+@media print {
+    body { background: white; overflow: visible; height: auto; margin: 0; }
+    .no-print, .editor { display: none !important; }
+    .app-container { display: block; height: auto; }
+    .preview { padding: 0; margin: 0; background: white; display: block; height: auto; }
+    
+    .paper { 
+        width: 100%; max-width: 100%; 
+        padding: 20mm; 
+        box-shadow: none; margin: 0; border: none; 
+    }
+    
+    /* Reseta tabela para impressão */
+    table { table-layout: auto; }
+    th, td { font-size: 0.95em; padding: 10px 0; }
+    th:nth-child(1), td:nth-child(1) { width: auto; }
+}
