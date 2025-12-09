@@ -35,8 +35,8 @@ O projeto foi construído seguindo a filosofia **Vanilla JS**, sem dependências
 * **HTML5 Semântico:** Estrutura acessível e organizada.
 * **CSS3 Moderno:**
     * `Flexbox` para layouts.
-    * `@media print` para customização da impressão.
-    * `@page` hacks para remover cabeçalhos/rodapés do navegador.
+    *  Utilização avançada de `@media print` para transformar o layout web em um documento A4 estático.
+    *  Implementação da regra `@page { margin: 0 }` para forçar a remoção de cabeçalhos e rodapés automáticos do navegador (data, URL, título), garantindo um PDF limpo.
 * **JavaScript (ES6+):**
     * Manipulação do DOM.
     * Gerenciamento de Estado (Arrays e Objetos).
